@@ -27,11 +27,13 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           light: "hsl(var(--primary-light))",
+          muted: "hsl(var(--primary-muted))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
           light: "hsl(var(--secondary-light))",
+          muted: "hsl(var(--secondary-muted))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -81,6 +83,7 @@ export default {
       boxShadow: {
         'lift': '0 4px 20px -4px hsl(30 10% 15% / 0.08)',
         'lift-lg': '0 8px 30px -6px hsl(30 10% 15% / 0.12)',
+        'glow': '0 0 30px hsl(45 90% 55% / 0.3)',
       },
       keyframes: {
         "accordion-down": {

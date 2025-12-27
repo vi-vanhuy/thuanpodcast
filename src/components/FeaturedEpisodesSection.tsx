@@ -1,43 +1,43 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Headphones } from "lucide-react";
 
 const episodes = [
   {
-    number: "EP.42",
+    number: "EP.52",
     title: "Về việc chậm lại trong một thế giới vội vã",
     duration: "45 phút",
     mood: "Reflective",
   },
   {
-    number: "EP.38",
+    number: "EP.48",
     title: "Khi nào thì nên dừng lại và bắt đầu lại?",
     duration: "38 phút",
     mood: "Inspiring",
   },
   {
-    number: "EP.35",
-    title: "Storytelling: Nghệ thuật kể chuyện không phải để bán hàng",
-    duration: "52 phút",
-    mood: "Educational",
+    number: "EP.45",
+    title: "Sống tử tế với chính mình trước đã",
+    duration: "42 phút",
+    mood: "Healing",
   },
 ];
 
 const FeaturedEpisodesSection = () => {
   return (
-    <section className="section-spacing">
+    <section className="section-spacing bg-card">
       <div className="container">
-        <div className="flex items-end justify-between mb-12 fade-in">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 fade-in">
           <div>
+            <p className="font-handwritten text-xl text-primary mb-2">🎧 Nghe gì hôm nay?</p>
             <h2 className="text-2xl md:text-3xl font-medium text-foreground">
-              Featured Episodes
+              Những tập được yêu thích
             </h2>
-            <p className="text-muted-foreground mt-2">Những tập podcast được yêu thích</p>
           </div>
           <Link
             to="/podcast"
-            className="hidden md:flex items-center gap-2 text-sm text-primary hover:text-primary-light transition-colors"
+            className="flex items-center gap-2 text-sm text-secondary hover:text-secondary-light transition-colors"
           >
-            Tất cả tập <ArrowRight size={16} />
+            Xem tất cả <ArrowRight size={16} />
           </Link>
         </div>
 
@@ -46,30 +46,26 @@ const FeaturedEpisodesSection = () => {
             <Link
               key={episode.number}
               to="/podcast"
-              className={`fade-in fade-in-delay-${index + 1} group block p-6 rounded-lg bg-card border border-border/50 card-hover`}
+              className={`fade-in fade-in-delay-${index + 1} group block p-6 rounded-2xl bg-background border border-border/50 card-hover`}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Play size={16} className="text-primary ml-0.5" />
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <Play size={20} className="text-primary-foreground ml-0.5" fill="currentColor" />
                 </div>
                 <span className="tag-pill text-xs">{episode.mood}</span>
               </div>
               
               <p className="text-xs text-muted-foreground mb-2">{episode.number}</p>
-              <h3 className="text-base font-medium text-foreground group-hover:text-primary transition-colors leading-snug mb-3">
+              <h3 className="text-base font-medium text-foreground group-hover:text-secondary transition-colors leading-snug mb-3">
                 {episode.title}
               </h3>
-              <p className="text-xs text-muted-foreground">{episode.duration}</p>
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <Headphones size={14} />
+                <span>{episode.duration}</span>
+              </div>
             </Link>
           ))}
         </div>
-
-        <Link
-          to="/podcast"
-          className="md:hidden flex items-center justify-center gap-2 mt-8 text-sm text-primary"
-        >
-          Tất cả tập <ArrowRight size={16} />
-        </Link>
       </div>
     </section>
   );

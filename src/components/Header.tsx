@@ -19,7 +19,7 @@ const Header = () => {
       <nav className="container flex items-center justify-between py-4">
         {/* Logo */}
         <Link to="/" className="font-handwritten text-2xl text-foreground hover:text-primary transition-colors">
-          Thuần
+          Thuần <span className="text-primary">♡</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -40,7 +40,7 @@ const Header = () => {
         </div>
 
         {/* CTA Button */}
-        <Button variant="outline" size="sm" className="hidden md:inline-flex" asChild>
+        <Button variant="secondary" size="sm" className="hidden md:inline-flex" asChild>
           <Link to="/work#contact">Contact</Link>
         </Button>
 
@@ -72,7 +72,7 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <Button variant="outline" size="sm" className="mt-4 w-full" asChild>
+            <Button variant="secondary" size="sm" className="mt-4 w-full" asChild>
               <Link to="/work#contact" onClick={() => setMobileMenuOpen(false)}>
                 Contact
               </Link>
