@@ -1,7 +1,14 @@
 {
   "name": "thuan-podcast",
-  "private": true,
   "version": "1.0.0",
+  "description": "A modern podcast website built with Next.js, featuring automatic Spotify podcast data fetching and elegant design",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vi-vanhuy/thuanpodcast.git"
+  },
+  "author": "Vi Van Huy",
+  "license": "MIT",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "fetch-spotify": "node scripts/fetch-spotify.js",

@@ -1,73 +1,138 @@
-# Welcome to your Lovable project
+# Thuận Podcast 🎙️
 
-## Project info
+A modern, elegant podcast website built with Next.js, featuring automatic Spotify podcast data fetching and a beautiful, responsive design.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## ✨ Features
 
-## How can I edit this code?
+- **Spotify Integration**: Automatically fetches and displays podcast episodes from Spotify
+- **Modern Design**: Clean, professional interface with smooth animations
+- **Responsive Layout**: Works perfectly on desktop, tablet, and mobile devices
+- **SEO Optimized**: Built-in SEO best practices with meta tags and sitemap
+- **Static Generation**: Fast page loads with Next.js static site generation
+- **TypeScript**: Full type safety throughout the codebase
+- **Tailwind CSS**: Modern utility-first CSS framework for styling
 
-There are several ways of editing your application.
+## 🚀 Tech Stack
 
-**Use Lovable**
+- **Framework**: [Next.js 14](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **API**: [Spotify Web API](https://developer.spotify.com/documentation/web-api)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 📋 Prerequisites
 
-Changes made via Lovable will be committed automatically to this repo.
+- Node.js 18+ and npm
+- Spotify Developer Account (for API credentials)
 
-**Use your preferred IDE**
+## 🛠️ Setup
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 1. Clone the repository
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+git clone https://github.com/vi-vanhuy/thuanpodcast.git
+cd thuanpodcast
+```
 
-Follow these steps:
+### 2. Install dependencies
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 3. Configure Spotify API
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
+2. Create a new app or use an existing one
+3. Copy your **Client ID** and **Client Secret**
+4. Copy `.env.example` to `.env`:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+cp .env.example .env
+```
+
+5. Edit `.env` and add your credentials:
+
+```env
+SPOTIFY_CLIENT_ID=your_client_id_here
+SPOTIFY_CLIENT_SECRET=your_client_secret_here
+SPOTIFY_SHOW_ID=1oTWO4OeEteztXXyeafF1C
+```
+
+> **Note**: The `SPOTIFY_SHOW_ID` is the ID from your podcast's Spotify URL. You can find it in the URL: `https://open.spotify.com/show/YOUR_SHOW_ID`
+
+### 4. Fetch Spotify Data
+
+The build process automatically fetches the latest podcast data, but you can also fetch it manually:
+
+```bash
+npm run fetch-spotify
+```
+
+### 5. Run Development Server
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📦 Build for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+npm start
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The build script will automatically fetch the latest podcast data before building.
 
-## What technologies are used for this project?
+## 📁 Project Structure
 
-This project is built with:
+```
+thuanpodcast/
+├── app/                    # Next.js app directory
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   └── podcast/           # Podcast pages
+├── src/
+│   ├── components/        # React components
+│   ├── views/            # Page views
+│   └── hooks/            # Custom React hooks
+├── public/
+│   ├── data/             # Generated Spotify data
+│   └── images/           # Static images
+├── scripts/
+│   └── fetch-spotify.js  # Spotify data fetcher
+├── .env.example          # Example environment variables
+└── package.json
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🔒 Security
 
-## How can I deploy this project?
+- **Never commit** your `.env` file to version control
+- The `.env.example` file contains only placeholder values
+- Regenerate your Spotify API credentials if they are accidentally exposed
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## 📄 License
 
-## Can I connect a custom domain to my Lovable project?
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Yes, you can!
+## 🤝 Contributing
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 👤 Author
+
+**Vi Van Huy**
+- GitHub: [@vi-vanhuy](https://github.com/vi-vanhuy)
+
+## 🙏 Acknowledgments
+
+- Spotify for their excellent Web API
+- Next.js team for the amazing framework
+- Radix UI for the accessible component primitives
+
+---
+
+Made with ❤️ and ☕
