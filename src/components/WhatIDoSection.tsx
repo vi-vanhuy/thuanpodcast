@@ -1,20 +1,28 @@
-import { Mic, Heart, Sparkles } from "lucide-react";
+"use client";
 
-const services = [
+import { GraduationCap, Briefcase, Mic, Target } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
+
+const profileItems = [
+  {
+    icon: GraduationCap,
+    title: "Học vấn",
+    description: "Cử nhân ngành Marketing, Đại học Kinh tế Quốc dân (NEU), Khóa 61",
+  },
+  {
+    icon: Briefcase,
+    title: "Kỹ năng",
+    description: "Xây dựng kịch bản, Storytelling, Content Strategy, Personal Branding, Podcast Production",
+  },
   {
     icon: Mic,
-    title: "Podcast",
-    description: "Những cuộc trò chuyện chậm rãi về cuộc sống, phát triển bản thân và chăm sóc tâm hồn.",
+    title: "Công việc",
+    description: "Content Creator, Podcaster, Scriptwriter — Hợp tác với các doanh nghiệp trong dự án truyền thông",
   },
   {
-    icon: Heart,
-    title: "Healing Content",
-    description: "Nội dung chữa lành, giúp bạn thấy nhẹ nhõm hơn trong những ngày khó khăn.",
-  },
-  {
-    icon: Sparkles,
-    title: "Storytelling",
-    description: "Kể những câu chuyện gần gũi, mộc mạc về những điều nhỏ bé nhưng ý nghĩa.",
+    icon: Target,
+    title: "Triết lý",
+    description: "Mọi thứ xảy ra đều có lý do của nó. Cứ đi, mọi thứ sẽ dần trở nên rõ ràng",
   },
 ];
 
@@ -22,27 +30,26 @@ const WhatIDoSection = () => {
   return (
     <section className="section-spacing">
       <div className="container">
-        <div className="max-w-reading mx-auto mb-12 text-center fade-in">
+        <ScrollReveal className="max-w-reading mx-auto mb-12 text-center">
           <h2 className="font-handwritten text-3xl md:text-4xl text-secondary mb-4">
-            Mình làm gì?
+            Về mình
           </h2>
           <p className="text-text-body">
-            Ba điều mình tập trung chia sẻ qua Thuần Podcast và các nền tảng khác.
+            Một chút về Nhung — con người đứng sau Thuần Podcast
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className={`fade-in fade-in-delay-${index + 1} p-8 rounded-2xl bg-card border border-border/50 card-hover text-center`}
-            >
-              <div className="w-14 h-14 mx-auto mb-6 rounded-full bg-primary/20 flex items-center justify-center">
-                <service.icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {profileItems.map((item, index) => (
+            <ScrollReveal key={item.title} delay={index * 100}>
+              <div className="p-6 rounded-2xl bg-card border border-border/50 card-hover h-full">
+                <div className="w-12 h-12 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <item.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-lg font-medium text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
-              <h3 className="text-lg font-medium text-foreground mb-3">{service.title}</h3>
-              <p className="text-sm text-muted-foreground">{service.description}</p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

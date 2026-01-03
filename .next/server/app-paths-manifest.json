@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/course/page": "app/course/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/course/[id]/page": "app/course/[id]/page.js",
+  "/work/page": "app/work/page.js",
+  "/courses/thanh-chat/page": "app/courses/thanh-chat/page.js",
+  "/page": "app/page.js",
+  "/podcast/page": "app/podcast/page.js",
+  "/work/case/[id]/page": "app/work/case/[id]/page.js"
+}
