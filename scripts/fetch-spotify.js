@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 // Load environment variables
-const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID || '01c403f3b29a49d68fe22604217d239e';
-const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET || '3bd9452fddbe4a6484fe7e634db2f72c';
+const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 const SHOW_ID = process.env.SPOTIFY_SHOW_ID || '1oTWO4OeEteztXXyeafF1C';
 
 // Validate environment variables
